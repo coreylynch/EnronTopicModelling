@@ -1,0 +1,5 @@
+Enron emails can be obtained here: http://www.cs.cmu.edu/~enron/
+
+Dependencies:
+David Blei's implementation of Online Latent Dirichlet Allocation, which can be obtained here: http://www.cs.princeton.edu/~blei/topicmodeling.html
+
