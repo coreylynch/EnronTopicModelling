@@ -40,7 +40,7 @@ if __name__ == '__main__':
   for email in opened_files:
     if len(email) > ARTICLE_MIN_CHARS:
       topic = numpy.argmax(lda.inference([mm[index]])[0])
-      email_with_topic = {'email':email,'topic':str(topic)}
+      email_with_topic = {'email': unicode(email, 'utf-8'),'topic': str(topic)}
       db.emails.insert(email_with_topic, safe=True)
       print 'Inserted email %i with topic %i' % (index,topic)
       index +=1
