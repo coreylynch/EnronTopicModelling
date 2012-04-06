@@ -1,3 +1,6 @@
+Uses gensim to topic model the enron email dataset. After OLDA model is trained, model is used to infer
+topics for each email, and emails are stored in mongo for retrieval with their associated top topic.
+
 Enron emails can be obtained here: http://www.cs.cmu.edu/~enron/
 
 Dependencies:
