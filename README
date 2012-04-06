@@ -1,7 +1,4 @@
-This uses gensim's online latent dirichlet allocation implementation to topic model the Enron Email dataset. The Enron
-Emails contain 517,431 emails from 150 Enron executive accounts covering a period from December 1979 through February
-2004, with the majority of emails occurring during 1999, 2000, and 2001. After training, we can infer 50 latent topics
-in the corpus. Topics are interpreted by their probability distribution over words.
+This uses gensim's online latent dirichlet allocation implementation to topic model the Enron Email dataset. The Enron Emails contain 517,431 emails from 150 Enron executive accounts covering a period from December 1979 through February 2004, with the majority of emails occurring during 1999, 2000, and 2001. After training, we can infer 50 latent topics in the corpus. Topics are interpreted by their probability distribution over words.
 
 Example topic word distributions:
 
