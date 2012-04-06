@@ -10,8 +10,8 @@ topic #4: 0.020*sally + 0.012*beck + 0.010*becks + 0.009*sbecknsf + 0.007*sallyb
 topic #29: 0.020*image + 0.006*click + 0.005*free + 0.005*order + 0.004*amazoncom + 0.004*online + 0.004*shipping + 0.004*card + 0.003*training
 topic #14: 0.014*image + 0.009*travel + 0.006*fares + 0.006*hotel + 0.005*mailbox + 0.004*airlines + 0.004*flight + 0.004*fare + 0.004*mwhitt
 
-We can also infer a probability distribution over topics for each email. Clustering emails by topic can help in information
-retrieval. After training, each email is assigned it's most likely topic and stored in mongodb.
+We can also infer a probability distribution over topics for each email. Clustering emails by topic can help in information retrieval.
+After training, each email is assigned it's most likely topic and stored in mongodb.
 
 
 Enron emails can be obtained here: http://www.cs.cmu.edu/~enron/
