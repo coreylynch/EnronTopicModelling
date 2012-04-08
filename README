@@ -10,8 +10,8 @@ Example topic word distributions:
  * topic #96: 0.004*agreement + 0.003*credit + 0.003*language + 0.003*such + 0.003*section + 0.003*under
  * topic #58: 0.006*california + 0.005*market + 0.005*said + 0.004*iso + 0.004*electricity + 0.004*ferc
 
-With a trained model we can also infer, for each email, a probability distribution over topics. With each document represented as a vector of topic probabilities, we can do things like cluster similar documents together via the cosine similarity measure, or assign topics to unseen documents (like user queries) and retrieve all emails that match that topic.
-For each email, we infer a topic distribution and store it in mongo with its dominant topic, it's full distribution, as well as some metadata (e.g. from, to, date, etc.). This allows us to build higher level analysis like the graphs of topic frequency over time.
+With a trained model we can also infer, for each email, a probability distribution over topics. With each email represented as a vector of topic probabilities, we can do things like cluster similar emails together via the cosine similarity measure, or assign topics to new unseen documents (like user queries) and retrieve all emails that match that topic.
+Each email gets stored in mongo alongside its dominant topic, it's full distribution, as well as some metadata (e.g. from, to, date, etc.). This allows us to build higher level analysis like the graphs of topic frequency over time.
 
 The Enron emails can be obtained here: http://www.cs.cmu.edu/~enron/
 
