@@ -1,15 +1,17 @@
-This uses gensim's online latent dirichlet allocation implementation to topic model the Enron Email dataset. The Enron Emails contain 517,431 emails from 150 Enron executive accounts covering a period from December 1979 through February 2004, with the majority of emails occurring during 1999, 2000, and 2001. After training, we can infer 50 latent topics in the corpus. Topics are interpreted by their probability distribution over words.
+This uses gensim's online latent dirichlet allocation implementation to topic model the Enron Email dataset. The Enron Emails contain 517,431 emails from 150 Enron executive accounts covering a period from December 1979 through February 2004, with the majority of emails occurring during 1999, 2000, and 2001. After training, we can infer 100 latent topics in the corpus. Topics are interpreted by their probability distribution over words.
 
 Example topic word distributions:
 
-topic #31: 0.003*market + 0.002*trading + 0.002*risk + 0.002*management + 0.002*million + 0.002*companies + 0.002*services
-topic #0: 0.013*intended + 0.011*recipient + 0.006*confidential + 0.005*privileged + 0.005*prohibited + 0.005*attachments 
-topic #3: 0.005*im + 0.005*she + 0.004*her + 0.004*hope + 0.004*night + 0.003*really + 0.003*weekend + 0.003*hey 
-topic #4: 0.020*sally + 0.012*beck + 0.010*becks + 0.009*sbecknsf + 0.007*sallybeckdec + 0.004*risk + 0.004*operations
-topic #29: 0.020*image + 0.006*click + 0.005*free + 0.005*order + 0.004*amazoncom + 0.004*online + 0.004*shipping
-topic #14: 0.014*image + 0.009*travel + 0.006*fares + 0.006*hotel + 0.005*mailbox + 0.004*airlines + 0.004*flight
+ * topic #34: 0.010*nymex + 0.008*exchange + 0.007*futures + 0.007*member + 0.005*clearing + 0.005*notice
+ * topic #15: 0.011*game + 0.006*fantasy + 0.005*football + 0.005*wr + 0.005*play + 0.005*rb
+ * topic #39: 0.007*emissions + 0.007*environmental + 0.005*etrade + 0.005*epa + 0.005*lcampbensf + 0.004*permit
+ * topic #76: 0.006*chairman + 0.005*president + 0.004*ceo + 0.004*global + 0.004*businesses + 0.004*chief 
+ * topic #17: 0.022*sally + 0.013*beck + 0.012*becks + 0.010*sbecknsf + 0.007*sallybeckdec
+ * topic #96: 0.004*agreement + 0.003*credit + 0.003*language + 0.003*such + 0.003*section + 0.003*under
+ * topic #58: 0.006*california + 0.005*market + 0.005*said + 0.004*iso + 0.004*electricity + 0.004*ferc
 
-We can also infer, for each email, a probability distribution over topics. Tagging emails with their most likely topic and then clustering them can help with information retrieval. After training, each email is assigned it's most likely topic and stored in mongodb.
+With a trained model we can also infer, for each email, a probability distribution over topics. With each document represented as a vector of topic probabilities, we can do things like cluster similar documents together via the cosine similarity measure, or assign topics to unseen documents (like user queries) and retrieve all emails that match that topic.
+For each email, we infer a topic distribution and store it in mongo with its dominant topic, it's full distribution, as well as some metadata (e.g. from, to, date, etc.). This allows us to build higher level analysis like the graphs of topic frequency over time.
 
 The Enron emails can be obtained here: http://www.cs.cmu.edu/~enron/
 
